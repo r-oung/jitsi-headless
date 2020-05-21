@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-
+// Reference: https://code.saghul.net/tag/headless/
 // Streams the first webcam in the system to the specified Jitsi Meet room. Audio is currently
 // not sent, but it can be easily enabled by disabling the corresponding setting in `meetArgs`.
 //
@@ -25,18 +25,18 @@ async function main(room, baseUrl='https://meet.jit.si') {
 
     // Jitsi Meet options
     // https://github.com/jitsi/lib-jitsi-meet/blob/master/doc/API.md
-    const meetArgs = [
+    // const meetArgs = [
         // Disable receiving of video
         // 'config.channelLastN=0',
         // Mute our audio
         // 'config.startWithAudioMuted=true',
         // Don't use simulcast to save resources on the sender (our) side
-        'config.disableSimulcast=true',
+        // 'config.disableSimulcast=true',
         // No need to process audio levels
-        'config.disableAudioLevels=true',
+        // 'config.disableAudioLevels=true',
         // Disable P2P mode due to a bug in Jitsi Meet
         // 'config.p2p.enabled=false'
-    ];
+    // ];
 
     // const url = `${baseUrl}/${room}#${meetArgs.join('&')}`;
     const url = `${baseUrl}/${room}`;
