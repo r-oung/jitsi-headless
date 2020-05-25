@@ -20,7 +20,10 @@ async function main(room, baseUrl='https://meet.jit.si') {
         // Automatically give permission to use media devices
         '--use-fake-ui-for-media-stream',
         // Silence all output, just in case
-        '--alsa-output-device=plug:null'
+        '--alsa-output-device=plug:null',
+	'--display=:1',
+	'--no-sandbox',
+	'--disable-extensions',
     ];
 
     // Jitsi Meet options
@@ -44,10 +47,12 @@ async function main(room, baseUrl='https://meet.jit.si') {
 
     // Puppeteer launch options
     // https://github.com/puppeteer/puppeteer/blob/v3.0.1/docs/api.md#puppeteerlaunchoptions
-    const browser = await puppeteer.launch({ 
-        headless: true, // toggle for debugging
-        args: chromeArgs, 
-        handleSIGINT: false 
+    const browser = await puppeteer.launch({
+	defaultViewport: {height: 1080, width: 1920},
+        headless: false, // toggle for debugging
+        args: chromeArgs,
+	executablePath: '/usr/bin/chromium-browser',
+        handleSIGINT: false
     });
     const page = await browser.newPage();
 
