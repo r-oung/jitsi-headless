@@ -78,4 +78,4 @@ async function main(room, baseUrl = "https://meet.jit.si") {
   console.log("Running...");
 }
 
-main(process.argv[2] || "temi-4164126087");
+main(process.argv[2] || "test-0123456789");
