@@ -27,7 +27,7 @@ sudo apt install nodejs
 
 Plug in a webcam and run the script:
 ```
-node app.js
+node app.js <jitsi-meet-room-name>
 ```
 
 
