@@ -1,6 +1,6 @@
 # Jitsi Headless
 
-Specifically, running [Jitsi](https://jitsi.org/) on a Raspberry Pi. 
+Instructions are for running [Jitsi](https://jitsi.org/) on a Raspberry Pi. Tested on a Raspberry Pi 4 with 8GB of RAM.
 
 
 ## Instructions
