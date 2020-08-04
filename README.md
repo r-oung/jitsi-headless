@@ -18,13 +18,17 @@ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install nodejs
 ```
 
+Clone this repository and install packages:
+```
+git clone https://github.com/ray-hrst/jitsi-headless.git
+cd jitsi-headless/
+npm install package.json
+```
+
 Start an Xvfb display:
 ```
 Xvfb :1 -screen 0 1920x1080x24 &
 ```
-
-We will point chromium this display with `--display=:1`.
-
 
 Plug in a webcam and run the script:
 ```
